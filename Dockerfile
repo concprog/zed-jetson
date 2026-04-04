@@ -29,17 +29,17 @@ SHELL ["/bin/bash", "-c"]
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 COPY ros2_build.sh rosdeps.yml $TMP/
-# RUN $TMP/ros2_build.sh || touch $TMP/.ros.build.failed
+RUN $TMP/ros2_build.sh
 
-RUN if [ -f $TMP/.ros.build.failed ]; then \
-      echo "ROS ${ROS_DISTRO} build failed!"; \ 
-    fi
+#RUN if [ -f $TMP/.ros.build.failed ]; then \
+#      echo "ROS ${ROS_DISTRO} build failed!"; \ 
+#    fi
 
-RUN if [ "$(lsb_release -rs)" = '24.04' ]; then \
-      echo "#!/usr/bin/env bash" > "/opt/venv/bin/register-python-argcomplete"; \
-    fi
+#    RUN if [ "$(lsb_release -rs)" = '24.04' ]; then \
+#      echo "#!/usr/bin/env bash" > "/opt/venv/bin/register-python-argcomplete"; \
+#    fi
 
-RUN /tmp/numpy/install.sh && /tmp/cmake/install.sh
+# RUN /tmp/numpy/install.sh && /tmp/cmake/install.sh
 
 COPY ros_entrypoint.sh ros_environment.sh ros2_install.sh /
 
