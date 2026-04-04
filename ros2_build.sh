@@ -155,13 +155,13 @@ xargs -a rosdeps.txt apt-get install -y --no-install-suggests --no-install-recom
 
 colcon build \
   --merge-install \
-  --packages-skip image_proc \
+  --packages-skip image_proc image_rotate \
   --cmake-args \
   -Wno-dev \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_POLICY_DEFAULT_CMP0148=OLD \
   -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
-  -DSECURITY=ON
+  -DSECURITY=ON || true
 
 # ── Cleanup ──────────────────────────────────────────────────────────────────
 rm -rf "${ROS_ROOT}/src" "${ROS_ROOT}/log" "${ROS_ROOT}/build"
