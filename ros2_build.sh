@@ -43,7 +43,8 @@ apt-get install -y --no-install-recommends \
   build-essential cmake pkg-config \
   libeigen3-dev libbullet-dev libpython3-dev \
   libasio-dev libtinyxml2-dev libcunit1-dev \
-  libacl1-dev libssl-dev libxaw7-dev libfreetype-dev
+  libacl1-dev libssl-dev libxaw7-dev libfreetype-dev \
+  libopencv-dev
 
 maybe_install "rti-connext-dds-6.0.1"
 
