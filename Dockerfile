@@ -4,7 +4,7 @@
 #
 
 # ── Stage 1: ROS2 ────────────────────────────────────────────────────────────
-FROM nvcr.io/nvidia/l4t-jetpack:r36.4.0 AS ros2_build
+FROM dustynv/opencv:r36.3.0 AS ros2_build
 
 ARG ROS_PACKAGE=ros_base \
     ROS_VERSION=jazzy \
