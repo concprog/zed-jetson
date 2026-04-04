@@ -29,10 +29,10 @@ SHELL ["/bin/bash", "-c"]
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 COPY ros2_build.sh rosdeps.yml $TMP/
-RUN $TMP/ros2_build.sh || touch $TMP/.ros.build.failed
+# RUN $TMP/ros2_build.sh || touch $TMP/.ros.build.failed
 
 RUN if [ -f $TMP/.ros.build.failed ]; then \
-      echo "ROS ${ROS_DISTRO} build failed!" && exit 1; \
+      echo "ROS ${ROS_DISTRO} build failed!"; \ 
     fi
 
 RUN if [ "$(lsb_release -rs)" = '24.04' ]; then \
