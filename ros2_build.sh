@@ -44,7 +44,7 @@ apt-get install -y --no-install-recommends \
   libeigen3-dev libbullet-dev libpython3-dev \
   libasio-dev libtinyxml2-dev libcunit1-dev \
   libacl1-dev libssl-dev libxaw7-dev libfreetype-dev \
-  libopencv-contrib-dev
+  'libopencv-*'
 
 maybe_install "rti-connext-dds-6.0.1"
 
