@@ -60,7 +60,7 @@ RUN ln -sf /usr/lib/$(uname -m)-linux-gnu/tegra/libv4l2.so.0 \
 RUN apt-get update -y || true && \
     apt-get install --no-install-recommends \
         lsb-release wget less zstd udev sudo apt-transport-https -y && \
-    wget --quiet -O ZED_SDK_Linux.run ${ZED_URL} && \
+    wget --quiet -O ZED_SDK_Linux.run https://download.stereolabs.com/zedsdk/5.2/l4t36.5/jetsons && \
     chmod +x ZED_SDK_Linux.run && \
     ./ZED_SDK_Linux.run -- silent skip_drivers && \
     rm -rf /usr/local/zed/resources/* && \
